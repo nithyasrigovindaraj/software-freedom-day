@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Freedom Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: black;
+      color: #fff;
+      text-align: center;
+      overflow-y: scroll;
+    }
+
+    /* Floating Open Source Logos */
+    .floating-icons img {
+      position: fixed;
+      width: 60px;
+      opacity: 0.5;
+      z-index: -1;
+      animation: float 50s linear infinite;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(0,255,255,0.7);
+    }
+    .floating-icons img:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
+    .floating-icons img:nth-child(2) { top: 10%; right: 8%; animation-delay: 5s; }
+    .floating-icons img:nth-child(3) { top: 40%; left: 2%; animation-delay: 10s; }
+    .floating-icons img:nth-child(4) { top: 45%; right: 5%; animation-delay: 15s; }
+    .floating-icons img:nth-child(5) { bottom: 5%; left: 5%; animation-delay: 20s; }
+    .floating-icons img:nth-child(6) { bottom: 10%; right: 5%; animation-delay: 25s; }
+    .floating-icons img:nth-child(7) { top: 15%; left: 15%; animation-delay: 30s; }
+    .floating-icons img:nth-child(8) { top: 20%; right: 20%; animation-delay: 35s; }
+    .floating-icons img:nth-child(9) { bottom: 15%; left: 15%; animation-delay: 40s; }
+    .floating-icons img:nth-child(10) { bottom: 15%; right: 20%; animation-delay: 45s; }
+
+    @keyframes float {
+      0%   { transform: translateY(0px) rotate(0deg); }
+      50%  { transform: translateY(-30px) rotate(180deg); }
+      100% { transform: translateY(0px) rotate(360deg); }
+    }
+
+    /* College Logo */
+    .logo {
+      margin-top: 20px;
+      width: 100px;
+      height: auto;
+    }
+
+    /* College Name Multi-Color Animation */
+    .college-name {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(
+        270deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00ab,
+        #ff0000
+      );
+      background-size: 1800% 1800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow 18s ease infinite;
+      margin: 10px 0;
+    }
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h3 {
+      margin: 5px 0;
+      font-weight: 600;
+      color: #aaa;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3rem;
+      margin: 20px 0 10px;
+      background: linear-gradient(90deg, #0ff, #ff0, #f0f, #ff6600);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse 6s linear infinite;
+    }
+    @keyframes pulse {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 300% 50%;}
+    }
+
+    p { font-size: 1.1rem; margin-bottom: 20px; color: #ccc; }
+
+    /* Countdown */
+    #countdown {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin: 10px 0 40px;
+      background: linear-gradient(90deg, #ff00ff, #00ffff, #ff7700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: countdownGlow 6s linear infinite;
+    }
+    @keyframes countdownGlow {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 200% 50%;}
+    }
+
+    /* Events */
+    .events-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    .event {
+      width: 200px;
+      padding: 15px;
+      text-align: center;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.6);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .event:nth-child(1) { border-color: #ff4081; }
+    .event:nth-child(2) { border-color: #03a9f4; }
+    .event:nth-child(3) { border-color: #00ffcc; }
+    .event:nth-child(4) { border-color: #9c27b0; }
+
+    .event:nth-child(1):hover { background: #ff4081; box-shadow: 0 0 20px #ff4081; }
+    .event:nth-child(2):hover { background: #03a9f4; box-shadow: 0 0 20px #03a9f4; }
+    .event:nth-child(3):hover { background: #00ffcc; color: black; box-shadow: 0 0 20px #00ffcc; }
+    .event:nth-child(4):hover { background: #9c27b0; box-shadow: 0 0 20px #9c27b0; }
+  </style>
+</head>
+<body>
+  <!-- Floating Logos -->
+  <div class="floating-icons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" alt="Git">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" alt="Firefox">
+    <img src="https://logodix.com/logo/2069249.png" alt="GNU">
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg" alt="MySQL">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg" alt="Ubuntu">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code">
+  </div>
+
+  <!-- College Logo -->
+  <img src="https://formbuilder.ccavenue.com/live/uploads/company_image/340/16576859177026_16544952107651_Prathyusha-Enginerring.png" alt="College Logo" class="logo">
+
+  <!-- College & Dept -->
+  <h1 class="college-name">Prathyusha Engineering College</h1>
+  <p>(An Autonomous Institution)</p>
+  <h3>Department of Artificial Intelligence & Data Science</h3>
+  <h3>Organizes Events On</h3>
+
+  <!-- Main Title -->
+  <h1>SOFTWARE FREEDOM DAY</h1>
+  <p>Click on the Event to Register</p>
+
+  <!-- Countdown -->
+  <div id="countdown"></div>
+
+  <!-- Events -->
+  <div class="events-container">
+    <div class="event" onclick="window.open('FORM_LINK_1','_blank')">TechPitch</div>
+    <div class="event" onclick="window.open('FORM_LINK_2','_blank')">Hackabot</div>
+    <div class="event" onclick="window.open('FORM_LINK_3','_blank')">Solve to Survive</div>
+    <div class="event" onclick="window.open('FORM_LINK_4','_blank')">Logo Designing</div>
+  </div>
+
+  <script>
+    // Countdown
+    const countdown = document.getElementById("countdown");
+    const eventDate = new Date("Sep 19, 2025 10:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance < 0) {
+        clearInterval(timer);
+        countdown.innerHTML = "🎉 The Event has Started!";
+      } else {
+        const days = Math.floor(distance / (1000*60*60*24));
+        const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+        const seconds = Math.floor((distance%(1000*60))/1000);
+        countdown.innerHTML = `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
